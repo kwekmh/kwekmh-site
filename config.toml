@@ -1,0 +1,8 @@
+baseURL = "https://kwekmh.com/"
+languageCode = "en-us"
+title = "Ming's World"
+theme = "jane"
+[params]
+since = "2020"
+[author]
+name = "Kwek Ming Hong"
