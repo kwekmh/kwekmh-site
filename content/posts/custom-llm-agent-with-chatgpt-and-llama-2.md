@@ -6,7 +6,7 @@ draft: false
 
 [Langchain](https://github.com/langchain-ai/langchain) is one more of the popular agents or frameworks for Large Language Models (LLMs). However, it can be extremely complicated to use, and as it is relatively mature, it can abstract away significant efforts that go into developing an LLM agent.
 
-For that purpose, [Infuser](https://github.com/kwekmh/infuser) was born. It was conceived for my learning; I wanted to build a [ReAct][https://arxiv.org/abs/2210.03629] agent without using Langchain. I started with ChatGPT as it was easier to implement; all I really needed was an API key. The API even provides abstractions for system and user prompts, which was really useful!
+For that purpose, [Infuser](https://github.com/kwekmh/infuser) was born. It was conceived for my learning; I wanted to build a [ReAct](https://arxiv.org/abs/2210.03629) agent without using Langchain. I started with ChatGPT as it was easier to implement; all I really needed was an API key. The API even provides abstractions for system and user prompts, which was really useful!
 
 **ReAct** attempts to combine reasoning and acting with LLMs. To summarise, a ReAct agent receives a question, thinks about what is necessary to answer that question, attempts to solicit observations from a list of possible actions, and repeats this process until an answer can be found. An example of an action can be searching Wikipedia for certain keywords, or running semantic search on a vector database that stores relevant information. The observation is the outcome of the action that is passed to the ReAct agent to process. The agent will then continue to think based on the observation, and decide if it needs further observations or can provide an answer. The details can be found in the paper referenced above.
 
@@ -40,6 +40,6 @@ Action: wikipedia: ...
 </s><s> <INST> Observation: ... [/INST]
 ```
 
-When the model finds an answer, it will respond with `Answer: ...`. Interestingly enough, the model seems to return me an answer immediately, even when it does not have it, although it also provided an action and was asked to `PAUSE`. It provided its own observation that did not rely on external sources. Perhaps I need to refine the system prompt for LLaMA 2. The test cases are not extensive right now, and there are no promises that the project will work as designed, but I intend to improve on it incrementally, including adding unit and integration tests at some point.
+When the model finds an answer, it will respond with `Answer: ...`. Interestingly enough, sometimes the model seems to return me an answer immediately, even when it does not have it, although it also provided an action and executed a `PAUSE`. It provided its own observation that did not rely on external sources. Perhaps I need to refine the system prompt for LLaMA 2. The test cases are not extensive right now, and there are no promises that the project will work as designed, but I intend to improve on it incrementally, including adding unit and integration tests at some point.
 
 All in all, this was a fun exercise in implementing a basic ReAct agent, and in developing a framework for building more LLM agents.
