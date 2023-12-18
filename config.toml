@@ -2,7 +2,6 @@ baseURL = "https://kwekmh.com/"
 languageCode = "en-us"
 title = "Ming's World"
 theme = "PaperMod"
-copyright = "test"
 [params]
 since = "2020"
 [author]
