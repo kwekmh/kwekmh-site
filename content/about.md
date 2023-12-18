@@ -19,4 +19,6 @@ I have a strong background in applied information security research and red team
 
 I enjoy challenges, and I seek to be kept on my toes by dynamic and fast-paced projects. In my free time, I tinker mostly with software but I have also been making a foray into hardware. I love to build and break things; while they may sound contradictory, they are actually complementary, as my red teaming experience has taught me.
 
+A copy of my CV can be found [here](https://kwekmh.com/cv.pdf).
+
 I can be reached via [LinkedIn](https://www.linkedin.com/in/kwekmh). I am always happy to make a new friend.
