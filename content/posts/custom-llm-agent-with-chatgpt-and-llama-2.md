@@ -4,8 +4,6 @@ date: 2023-12-18T11:03:48+08:00
 draft: false
 ---
 
-**EDIT (20/12/2023)** - it turns out that you do not actually need to construct convoluted prompts for LLaMA manually! HuggingFace has [templates for chat models](https://huggingface.co/docs/transformers/main/en/chat_templating) that you can use with the tokenizer to generate the prompts.
-
 [Langchain](https://github.com/langchain-ai/langchain) is one more of the popular agents or frameworks for Large Language Models (LLMs). However, it can be extremely complicated to use, and as it is relatively mature, it can abstract away significant efforts that go into developing an LLM agent.
 
 For that purpose, [Infuser](https://github.com/kwekmh/infuser) was born. It was conceived for my learning; I wanted to build a [ReAct](https://arxiv.org/abs/2210.03629) agent without using Langchain. I started with ChatGPT as it was easier to implement; all I really needed was an API key. The API even provides abstractions for system and user prompts, which was really useful!
@@ -41,6 +39,8 @@ You run in a loop of Thought, Action, PAUSE and Observation.
 Action: wikipedia: ...
 </s><s> <INST> Observation: ... [/INST]
 ```
+
+***EDIT (20/12/2023)*** - it turns out that you do not actually need to construct convoluted prompts for LLaMA manually! HuggingFace has [templates for chat models](https://huggingface.co/docs/transformers/main/en/chat_templating) that you can use with the tokenizer to generate the prompts. On a positive note, the prompts generated are essentially identical, which means that my manual prompt construction was according to specifications.
 
 When the model finds an answer, it will respond with `Answer: ...`. Interestingly enough, sometimes the model seems to return me an answer immediately, even when it does not have it, although it also provided an action and executed a `PAUSE`. It provided its own observation that did not rely on external sources. Perhaps I need to refine the system prompt for LLaMA 2. The test cases are not extensive right now, and there are no promises that the project will work as designed, but I intend to improve on it incrementally, including adding unit and integration tests at some point.
 
